@@ -1,0 +1,183 @@
+#!/bin/sh
+# xdgurl: An install helper program for desktop stuff.
+
+# Original work: Copyright: 2016, Akira Ohgaki. License: GPL-3+ https://github.com/xdgurl/xdgurl
+
+# Here is xdgurl implementation that needs Busybox shell and Yad, no Python, no Tcl/Tk.
+
+# Aleksej Bobylev <al.bobylev@gmail.com>, 2016
+
+
+
+
+# Internationalization.
+export TEXTDOMAIN='xdgurl'
+_() { local T="$1"; shift; printf "$(gettext "$T")" "$@"; echo; }
+
+: ${XDG_CONFIG_HOME=$HOME/.config}
+[ -e "$XDG_CONFIG_HOME/user-dirs.dirs" ] && . "$XDG_CONFIG_HOME/user-dirs.dirs"
+: ${XDG_DOWNLOAD_DIR=$HOME/Downloads}
+: ${XDG_DOCUMENTS_DIR=$HOME/Documents}
+: ${XDG_MUSIC_DIR=$HOME/Music}
+: ${XDG_PICTURES_DIR=$HOME/Images}
+: ${XDG_VIDEOS_DIR=$HOME/Videos}
+: ${XDG_DATA_HOME=$HOME/.local/share}
+: ${KDEHOME=$HOME/.kde}
+
+temp_dir=$(mktemp -d)
+types='/usr/share/xdgurl/types'
+
+
+# Handler
+killed() {
+	rm -r "$temp_dir"
+	exit 1
+}
+
+
+uncompress_archive() {
+	# 1: path, 2: target_dir
+	echo "Uncompressing '$1' to '$2'"
+	case "$1" in
+		*.tar.Z|*.tar.z|*.tar.gz|*.tgz|*.tar.xz|*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.lzma|*.tar)
+			busybox tar -C "$2" -xf "$1";;
+		*.zip)
+			unzip -o "$1" -d "$2";;
+		*.7z)
+			7zr x "$1" -o"$2";;
+		*.rar)
+			unrar e "$1" "$2";;
+		*)
+			mv "$1" "$2";;
+	esac
+	echo 'Done'
+}
+
+
+download_gui() {
+	# Set handler
+	trap killed HUP
+
+	busybox wget -O "$temp_path" "$url" 2>&1 | tr '\r' '\n' | awk '
+		/%/{a = substr($0, 22, 4); gsub(" ", "", a); printf("#%s\n%s\n", a, a);}
+	' | yad --progress --auto-close --auto-kill \
+		--center --window-icon='dialog-information' --image='dialog-information' \
+		--title='Downloading' --text='Please wait...' \
+		--button='gtk-cancel:1'
+	ret=$?
+	[ ! $ret ] && exit 1
+	# Reset handler
+	trap HUP
+}
+
+
+install() {
+	echo "Installing"
+
+	case $1 in
+		*_plasmoids)		plasmapkg2 -t plasmoid       -i "$path"; gui status;;
+		*_look_and_feel)	plasmapkg2 -t lookandfeel    -i "$path"; gui status;;
+		*_desktopthemes)	plasmapkg2 -t theme          -i "$path"; gui status;;
+		kwin_effects)		plasmapkg2 -t kwineffect     -i "$path"; gui status;;
+		kwin_scripts)		plasmapkg2 -t kwinscript     -i "$path"; gui status;;
+		kwin_tabbox)		plasmapkg2 -t windowswitcher -i "$path"; gui status;;
+		*)
+			uncompress_archive "$temp_path" "$destination"
+			gui status "$(_ 'The archive file has been uncompressed into\n%s' "$destination")"
+			;;
+	esac
+
+	[ -e "$temp_path" ] && rm -f "$temp_path"
+	echo "Done"
+}
+
+
+gui() {
+	state=$?
+	file="${filename%.*}"; file="${file%.tar}"
+	case $1 in
+		confirm)
+			case $cmd in
+				install)
+					confirm_question="$(_ 'Do you want to install\n\n%s <b>%s</b>\n\nfrom %s\n\nto <b>%s</b>' \
+						"$(_ "$description")" "$file" "$url" "$destination")";;
+				*)
+					confirm_question="$(_ 'Do you want to download\n\n%s <b>%s</b>\n\nfrom %s\n\nto <b>%s</b>' \
+						"$(_ "$description")" "$file" "$url" "$destination")";;
+			esac
+			yad --window-icon="xdgurl" --center --title="$(echo 'Confirmation')" --width="300" --height="200" \
+				--image="dialog-question" --text="$(echo "$confirm_question" | sed 's|&|\&amp;|g')"
+			;;
+		status)
+			if [ $state -eq 0 ]; then
+				text="$(_ 'Installation complete')"; [ -n "$2" ] && text="$2"
+				yad --window-icon="xdgurl" --center --title="$(_ 'Complete')" --width='400' \
+					--image="dialog-information" --text="$text" \
+					--button="$(_ 'Open folder')!gtk-directory" --button='gtk-close' \
+				&& pcmanfm "$destination"
+			else
+				text="$(_ 'Installation failed')"; [ -n "$2" ] && text="$2"
+				yad --window-icon="xdgurl" --center --title="$(_ 'Error')" --width='300' \
+					--image="dialog-error" --text="$(_ 'Installation failed')" --button='gtk-close'
+			fi
+			;;
+		info)
+				yad --window-icon="xdgurl" --center --title="$(_ 'Information')" --width='300' \
+					--image="dialog-info" --text="$2" --button='gtk-close'
+			;;
+	esac
+}
+
+
+# Scheme (optional): not used now
+scheme="${1%%:*}"
+[ "$scheme" != 'xdgs' ] && scheme='xdg'
+
+# Command (optional): install or download, default to download
+cmd=$(echo "$1" | sed 's|^[^:]*://\([^?]*\)?.*$|\1|')
+[ "$cmd" != 'install' ] && cmd='download'
+
+
+# Parse entire URL and get variables:
+# url (mandatory), type (optional, default to downloads), and filename (optional)
+unset url filename; type='downloads'
+eval $(busybox httpd -d $(echo "${1#*\?}" | tr '&' '*') | tr '*' '\n' | sed "s|=|='|; s|$|'|")
+if [ -z "$url" ]; then false; gui status "$(_ 'Error, url is not provided! Exit.')"; exit 1; fi
+[ -z "$filename" ] && filename=$(basename $url)
+
+
+# Get destination (where to download/install) and type description
+eval "destination=$(awk -vt=$type 'BEGIN{FS="\t+"}($1==t){print $2}' "$types")"
+if [ -z "$destination" ]; then
+	type='downloads' # and try again
+	eval "destination=$(awk -vt=$type 'BEGIN{FS="\t+"}($1==t){print $2}' "$types")"
+fi
+description=$(awk -vt=$type 'BEGIN{FS="\t+"}($1==t){print $3}' "$types")
+
+
+# Get confirmation
+gui confirm
+[ ! $? -eq 0 ] && exit 0
+
+# get file
+temp_path="$temp_dir/$filename"
+path="$destination/$filename"
+echo "Retrieving a file from $url"
+download_gui
+
+[ ! -d "$destination" ] && echo "Creating a directory $destination" && mkdir -p "$destination"
+
+
+case $cmd in
+	download)
+		echo "Saving a file to $path"
+		mv $temp_path $path
+		echo "Done"
+		;;
+	install)
+		install $type
+		;;
+esac
+
+rm -rf $temp_dir
+exit 0
