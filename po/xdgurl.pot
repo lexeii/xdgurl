@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xdgurl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-27 18:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "AppImage application"
+msgstr ""
+
+msgid "file"
+msgstr ""
+
+msgid "document"
+msgstr ""
+
+
+msgid "picture"
+msgstr ""
+
+msgid "music file"
+msgstr ""
+
+msgid "video file"
+msgstr ""
+
+msgid "wallpaper"
+msgstr ""
+
+msgid "font"
+msgstr ""
+
+msgid "mouse cursor theme"
+msgstr ""
+
+msgid "icon theme"
+msgstr ""
+
+msgid "emoticons"
+msgstr ""
+
+msgid "theme"
+msgstr ""
+
+msgid "GNOME Shell theme"
+msgstr ""
+
+msgid "Cinnamon theme"
+msgstr ""
+
+msgid "GTK+2 theme"
+msgstr ""
+
+msgid "GTK+3 theme"
+msgstr ""
+
+msgid "Metacity theme"
+msgstr ""
+
+msgid "Xfwm4 theme"
+msgstr ""
+
+msgid "Openbox theme"
+msgstr ""
+
+msgid "Kvantum theme"
+msgstr ""
+
+msgid "Emerald theme"
+msgstr ""
+
+msgid "Compiz theme"
+msgstr ""
+
+msgid "Beryl theme"
+msgstr ""
+
+msgid "Enlightenment theme"
+msgstr ""
+
+msgid "Enlightenment background"
+msgstr ""
+
+msgid "Fluxbox style"
+msgstr ""
+
+msgid "Pekwm theme"
+msgstr ""
+
+msgid "Icewm theme"
+msgstr ""
+
+msgid "Plasma plasmoid"
+msgstr ""
+
+msgid "Plasma4 plasmoid"
+msgstr ""
+
+msgid "Plasma5 plasmoid"
+msgstr ""
+
+msgid "Plasma Look-and-Feel"
+msgstr ""
+
+msgid "Plasma5 Look-and-Feel"
+msgstr ""
+
+msgid "Plasma desktop theme"
+msgstr ""
+
+msgid "Plasma5 desktop theme"
+msgstr ""
+
+msgid "KWin effect"
+msgstr ""
+
+msgid "KWin script"
+msgstr ""
+
+msgid "KWin window switcher"
+msgstr ""
+
+msgid "Aurorae theme"
+msgstr ""
+
+msgid "deKorator theme"
+msgstr ""
+
+msgid "QtCurve theme"
+msgstr ""
+
+msgid "color scheme"
+msgstr ""
+
+msgid "Plasma color scheme"
+msgstr ""
+
+msgid "GNOME Shell extension"
+msgstr ""
+
+msgid "Cinnamon applet"
+msgstr ""
+
+msgid "Cinnamon desklet"
+msgstr ""
+
+msgid "Cinnamon extension"
+msgstr ""
+
+msgid "Nautilus script"
+msgstr ""
+
+msgid "Amarok script"
+msgstr ""
+
+msgid "Yakuake skin"
+msgstr ""
+
+msgid "Cairo clock theme"
+msgstr ""
+
+msgid "GNOME color scheme"
+msgstr ""
+
+msgid "Complete"
+msgstr ""
+
+msgid "Installation complete"
+msgstr ""
+
+msgid "Open folder"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Installation failed"
+msgstr ""
+
+msgid "Do you want to install\\n\\n%s <b>%s</b>\\n\\nfrom %s\\n\\nto <b>%s</b>"
+msgstr ""
+
+msgid "Do you want to download\\n\\n%s <b>%s</b>\\n\\nfrom %s\\n\\nto <b>%s</b>"
+msgstr ""
+
+msgid "Confirmation"
+msgstr ""
+
