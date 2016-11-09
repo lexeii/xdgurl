@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xdgurl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-31 00:29+0200\n"
+"PO-Revision-Date: 2016-10-31 00:52+0200\n"
+"Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.6\n"
+
+msgid "AppImage application"
+msgstr "приложение AppImage"
+
+msgid "file"
+msgstr "файл"
+
+msgid "document"
+msgstr "документ"
+
+msgid "picture"
+msgstr "картинка"
+
+msgid "music file"
+msgstr "музыкальный файл"
+
+msgid "video file"
+msgstr "видео файл"
+
+msgid "wallpaper"
+msgstr "фоновое изображение"
+
+msgid "font"
+msgstr "шрифт"
+
+msgid "mouse cursor theme"
+msgstr "тема указателей мыши"
+
+msgid "icon theme"
+msgstr "тема значков"
+
+msgid "emoticons"
+msgstr "эмотиконы"
+
+msgid "theme"
+msgstr "тема"
+
+msgid "GNOME Shell theme"
+msgstr "тема GNOME Shell"
+
+msgid "Cinnamon theme"
+msgstr "тема Cinnamon"
+
+msgid "GTK+2 theme"
+msgstr "тема GTK+2"
+
+msgid "GTK+3 theme"
+msgstr "тема GTK+3"
+
+msgid "Metacity theme"
+msgstr "тема Metacity"
+
+msgid "Xfwm4 theme"
+msgstr "тема Xfwm4"
+
+msgid "Openbox theme"
+msgstr "тема Openbox"
+
+msgid "Kvantum theme"
+msgstr "тема Kvantum"
+
+msgid "Emerald theme"
+msgstr "тема Emerald"
+
+msgid "Compiz theme"
+msgstr "тема Compiz"
+
+msgid "Beryl theme"
+msgstr "тема Beryl"
+
+msgid "Enlightenment theme"
+msgstr "тема Enlightenment"
+
+msgid "Enlightenment background"
+msgstr "фон Enlightenment"
+
+msgid "Fluxbox style"
+msgstr "стиль Fluxbox"
+
+msgid "Pekwm theme"
+msgstr "тема Pekwm"
+
+msgid "Icewm theme"
+msgstr "тема Icewm"
+
+msgid "Plasma plasmoid"
+msgstr "плазмоид Plasma"
+
+msgid "Plasma4 plasmoid"
+msgstr "плазмоид Plasma4"
+
+msgid "Plasma5 plasmoid"
+msgstr "плазмоид Plasma5"
+
+msgid "Plasma Look-and-Feel"
+msgstr "Plasma Look-and-Feel"
+
+msgid "Plasma5 Look-and-Feel"
+msgstr "Plasma5 Look-and-Feel"
+
+msgid "Plasma desktop theme"
+msgstr "тема рабочего стола Plasma"
+
+msgid "Plasma5 desktop theme"
+msgstr "тема рабочего стола Plasma5"
+
+msgid "KWin effect"
+msgstr "эффект KWin"
+
+msgid "KWin script"
+msgstr "скрипт KWin"
+
+msgid "KWin window switcher"
+msgstr "переключатель окон KWin"
+
+msgid "Aurorae theme"
+msgstr "тема Aurorae"
+
+msgid "deKorator theme"
+msgstr "тема deKorator"
+
+msgid "QtCurve theme"
+msgstr "тема QtCurve"
+
+msgid "color scheme"
+msgstr "цветовая схема"
+
+msgid "Plasma color scheme"
+msgstr "цветовая схема Plasma"
+
+msgid "GNOME Shell extension"
+msgstr "расширение GNOME Shell"
+
+msgid "Cinnamon applet"
+msgstr "апплет Cinnamon"
+
+msgid "Cinnamon desklet"
+msgstr "десклет Cinnamon"
+
+msgid "Cinnamon extension"
+msgstr "расширение Cinnamon"
+
+msgid "Nautilus script"
+msgstr "скрипт Nautilus"
+
+msgid "Amarok script"
+msgstr "скрипт Amarok"
+
+msgid "Yakuake skin"
+msgstr "оформление Yakuake"
+
+msgid "Cairo clock theme"
+msgstr "тема часов Cairo"
+
+msgid "GNOME color scheme"
+msgstr "цветовая схема GNOME"
+
+msgid "Complete"
+msgstr "Готово"
+
+msgid "Installation complete"
+msgstr "Установка завершена"
+
+msgid "Open folder"
+msgstr "Открыть папку"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Installation failed"
+msgstr "Установка завершилась ошибкой"
+
+msgid "Do you want to install\\n\\n%s <b>%s</b>\\n\\nfrom %s\\n\\nto <b>%s</b>"
+msgstr "Хотите ли вы установить\\n\\n%s <b>%s</b>\\n\\nиз %s\\n\\nв <b>%s</b>"
+
+msgid ""
+"Do you want to download\\n\\n%s <b>%s</b>\\n\\nfrom %s\\n\\nto <b>%s</b>"
+msgstr "Хотите ли вы загрузить\\n\\n%s <b>%s</b>\\n\\nиз %s\\n\\nв <b>%s</b>"
+
+msgid "Confirmation"
+msgstr "Подтверждение"
+
