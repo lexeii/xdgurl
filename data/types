@@ -1,0 +1,52 @@
+bin							$HOME/.bin								AppImage application
+downloads					$XDG_DOWNLOAD_DIR						file
+documents					$XDG_DOCUMENTS_DIR						document
+pictures					$XDG_PICTURES_DIR						picture
+music						$XDG_MUSIC_DIR							music file
+videos						$XDG_VIDEOS_DIR							video file
+wallpapers					$XDG_DATA_HOME/wallpapers				wallpaper
+fonts						$HOME/.fonts							font
+cursors						$HOME/.icons							mouse cursor theme
+icons						$XDG_DATA_HOME/icons					icon theme
+emoticons					$XDG_DATA_HOME/emoticons				emoticons
+themes						$HOME/.themes							theme
+gnome_shell_themes			$HOME/.themes							GNOME Shell theme
+cinnamon_themes				$HOME/.themes							Cinnamon theme
+gtk2_themes					$HOME/.themes							GTK+2 theme
+gtk3_themes					$HOME/.themes							GTK+3 theme
+metacity_themes				$HOME/.themes							Metacity theme
+xfwm4_themes				$HOME/.themes							Xfwm4 theme
+openbox_themes				$HOME/.themes							Openbox theme
+kvantum_themes				$HOME/.themes							Kvantum theme
+emerald_themes				$HOME/.emerald/themes					Emerald theme
+compiz_themes				$HOME/.emerald/themes					Compiz theme
+beryl_themes				$HOME/.emerald/themes					Beryl theme
+enlightenment_themes		$HOME/.e/e/themes						Enlightenment theme
+enlightenment_backgrounds	$HOME/.e/e/backgrounds					Enlightenment background
+fluxbox_styles				$HOME/.fluxbox/styles					Fluxbox style
+pekwm_themes				$HOME/.pekwm/themes						Pekwm theme
+icewm_themes				$HOME/.icewm/themes						Icewm theme
+plasma_plasmoids			$XDG_DATA_HOME/plasma/plasmoids			Plasma plasmoid
+plasma4_plasmoids			$XDG_DATA_HOME/plasma/plasmoids			Plasma4 plasmoid
+plasma5_plasmoids			$XDG_DATA_HOME/plasma/plasmoids			Plasma5 plasmoid
+plasma_look_and_feel		$XDG_DATA_HOME/plasma/look-and-feel		Plasma Look-and-Feel
+plasma5_look_and_feel		$XDG_DATA_HOME/plasma/look-and-feel		Plasma5 Look-and-Feel
+plasma_desktopthemes		$XDG_DATA_HOME/plasma/desktoptheme		Plasma desktop theme
+plasma5_desktopthemes		$XDG_DATA_HOME/plasma/desktoptheme		Plasma5 desktop theme
+kwin_effects				$XDG_DATA_HOME/kwin/effects				KWin effect
+kwin_scripts				$XDG_DATA_HOME/kwin/scripts				KWin script
+kwin_tabbox					$XDG_DATA_HOME/kwin/tabbox				KWin window switcher
+aurorae_themes				$XDG_DATA_HOME/aurorae/themes			Aurorae theme
+dekorator_themes			$XDG_DATA_HOME/deKorator/themes			deKorator theme
+qtcurve						$XDG_DATA_HOME/QtCurve					QtCurve theme
+color_schemes				$XDG_DATA_HOME/color-schemes			color scheme
+plasma_color_schemes		$XDG_DATA_HOME/color-schemes			Plasma color scheme
+gnome_shell_extensions		$XDG_DATA_HOME/gnome-shell/extensions	GNOME Shell extension
+cinnamon_applets			$XDG_DATA_HOME/cinnamon/applets			Cinnamon applet
+cinnamon_desklets			$XDG_DATA_HOME/cinnamon/desklets		Cinnamon desklet
+cinnamon_extensions			$XDG_DATA_HOME/cinnamon/extensions		Cinnamon extension
+nautilus_scripts			$XDG_DATA_HOME/nautilus/scripts			Nautilus script
+amarok_scripts				$KDEHOME/share/apps/amarok/scripts		Amarok script
+yakuake_skins				$KDEHOME/share/apps/yakuake/skins		Yakuake skin
+cairo_clock_themes			$HOME/.cairo-clock/themes				Cairo clock theme
+gnome_color_schemes			$HOME/.themes							GNOME color scheme
